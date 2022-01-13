@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hide_Text</title>
+	</head>
+	<body>
+	<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul class=flashes>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+	</p>
+	<style>
+		.image-preview{
+			width:300px;
+			min-height:290px;
+			border:2px solid black;
+			margin-top:20px;
+			margin-bottom:20px;
+			
+			display:flex;
+			align-items:center;
+			justify-content:center;
+			font-weight:bold;
+			color:#cccccc;
+		}
+		
+		.image-preview__image1{
+			display:none;
+			width:100%;
+		}	
+		
+		.submit1{
+			margin-top:50px;
+			width:300px;
+			height:50px;
+			border-radius:25px;
+			color:white;
+			background-color:black;
+		}
+	 
+	</style>
+		<form method="post" action="/" enctype="multipart/form-data">
+					<center>
+						<input type="file" name="img" id="file1" accept="image/png" autocomplete="off" required>
+						<div class ="image-preview" id="imagePreview1">
+						<img src="" alt="Image Preview1" class="image-preview__image1">
+						<span class="image-preview__default-text1">Image Preview</span>
+					</center>
+				<center>
+					<label for="message">Message to hide :</label>
+					<input type="text" id="message" name="message" style="margin-top:50px;"><br>
+					<!--<input type="text" value="File_name" name="filename">-->
+				</center>
+			<center>
+			<input type="submit" value="Steganography" name="tii" class="submit1">
+			</center>
+		</form>
+		<script>
+				const inFile1 = document.getElementById("file1");
+				const previewContainer1 =document.getElementById("imagePreview1");
+				const previewImage1 =previewContainer1.querySelector(".image-preview__image1");
+				const previewDefaultText1 =previewContainer1.querySelector(".image-preview__default-text1");
+				
+				file1.addEventListener("change",function(){
+				const file = this.files[0];
+				if (file){
+					const reader = new FileReader();
+					
+					previewDefaultText1.style.display="none";
+					previewImage1.style.display="block";
+					
+					reader.addEventListener("load",function(){
+						previewImage1.setAttribute("src", this.result);
+					});
+					reader.readAsDataURL(file);
+				}
+				else{
+					previewDefaultText1.style.display=null;
+					previewImage1.style.display=null;
+					previewImage1.setAttribute("src","");
+				}
+			});
+			</script>
+		
+	</body>
+</html>
+

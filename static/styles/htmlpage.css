@@ -1,0 +1,30 @@
+.tini{
+	background-color:black;
+	color:white;
+	border-radius:35px;
+	margin-top:200px;
+	padding:20px 40px;
+	text-align:center;
+}
+.iini{
+	background-color:black;
+	color:white;
+	border-radius:35px;
+	margin-top:20px;
+	padding:20px 40px;
+}
+.extract{
+	background-color:black;
+	color:white;
+	border-radius:35px;
+	margin-top:20px;
+	padding:20px 40px;
+}
+.extra{
+	background-color:black;
+	color:white;
+	border-radius:35px;
+	margin-top:20px;
+	padding:20px 40px;
+	margin-bottom:100px;
+}

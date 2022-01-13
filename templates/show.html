@@ -1,0 +1,31 @@
+<html>
+<title>Output Image</title>
+<body>
+	<style>
+		.image-preview{
+			width:300px;
+			min-height:290px;
+			border:2px solid black;
+			#border-radius:10px;
+			margin-top:20px;
+			margin-bottom:20px;
+			
+			display:flex;
+			align-items:center;
+			justify-content:center;
+			font-weight:bold;
+			color:#cccccc;
+		}
+		
+		.image-preview__image1{
+			width:100%;
+			
+		}
+	</style>
+	<center>
+		<div class="image-preview">
+		<img src="{{ user_image }}" alt="Image" class="image-preview__image1">
+		</div>
+	</center>
+</body>
+</html>

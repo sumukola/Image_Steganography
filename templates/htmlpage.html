@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Image Steganography</title>
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/htmlpage.css') }}">
+	</head>
+	<body>
+		<center>
+		<form action="/tini" method="POST">
+			<button type="submit" class="tini">Hide Text In Image</button>
+		</form>
+
+		<form action="/iini" method="POST">
+			<button type="submit" class="iini">Hide Image In Image</button>
+		</form>
+		
+		<form action="/extract" method="POST">
+			<button type="submit" class="extract">Extract Text In Image</button>
+		</form>
+		
+		<form action="/extra" method="POST">
+			<button type="submit" class="extra">Extract Image In Image</button>
+		</form>
+		<center>
+	</body>
+</html>
